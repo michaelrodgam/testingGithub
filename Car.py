@@ -1,4 +1,5 @@
 class Car:
+#rpm, hp and four wheels
 	typeNames = ["Undefined", "Sedan", "Pickup", "Van", "Monster Truck"]
 
 	def __init__(self, aModel, aEngine, aType, aColor):
@@ -10,18 +11,6 @@ class Car:
 		self.fuelTankLevel = 0
 		self.damage = 0
 		self.tiresUse = 0
-
-	def getModel(self):
-		return self.model
-
-	def getEngine(self):
-		return self.engine
-
-	def getType(self):
-		return self.typeNames[self.type]
-
-	def getColor(self):
-		return self.color
 
 #this method is for change the engine, because you want more hp.
 	def changeEngine(self, newEngine):
@@ -64,7 +53,7 @@ class Car:
 
 #Take a look of the car specs.
 	def CarSpecs(self):
-		return "Model: " + self.getModel() + "\nEngine: " + self.getEngine() + "\nType: " + self.getType() + "\nColor: " + self.getColor()
+		return "Model: " + self.model + "\nEngine: " + self.engine + "\nType: " + self.typeNames[self.type] + "\nColor: " + self.color
 
 #This is for detect if the car is ready for the run.
 	def carStatus(self):
@@ -73,12 +62,3 @@ class Car:
 #This will be sometime later on, like a comparison with others cars.
 	def getPreformTest():
 		return "The car preform well on the test."
-
-#testing the car class, delete this later on. Please!
-car1 = Car("Subaru Impreza 97", "v6", 1, "blue")
-print(car1.CarSpecs())
-print(car1.carStatus())
-car1.refuel()
-car1.changeTires()
-print(car1.carStatus())
-car1.runOneMile(4)
